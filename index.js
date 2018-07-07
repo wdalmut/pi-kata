@@ -1,17 +1,19 @@
 'use strict';
 
+const r = 1;
+
 const { sqrt, pow } = Math;
 const rnd = require('./random')(Math.random);
 
 function approx(random, iterations, circle, total) {
-  let x = random(-1,1);
-  let y = random(-1,1);
+  let x = random(-r,r);
+  let y = random(-r,r);
 
   total += 1;
 
-  let distance = sqrt(pow(x, 2) + pow(y, 2));
+  let distance = pow(x, 2) + pow(y, 2);
 
-  if (distance < 1) {
+  if (distance < (r*r)) {
     circle += 1;
   }
 
